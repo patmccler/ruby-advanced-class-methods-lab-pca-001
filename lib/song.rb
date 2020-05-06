@@ -53,10 +53,13 @@ class Song
   end
 
   def self.get_artist_from_filename(filename)
+    # filename.split(" - ").first
     /^(.*)\s\-/.match(filename).captures.first
   end
 
   def self.get_name_from_filename(filename)
+    # name = filename.split(" - ")[1]
+    # File.basename(name, File.extname(name))
     /\-\s(.*)\./.match(filename).captures.first
   end
 
