@@ -8,24 +8,21 @@ class Song
 
   def save
     self.class.all << self
+    self
   end
 
   def self.create
-    song = new
-    song.save
-    song
+    new.save
   end
 
-  def self.new_by_name name
+  def self.new_by_name(name)
     song = new
     song.name = name
     song
   end
 
-  def self.create_by_name name
-    song = new_by_name name
-    song.save
-    song
+  def self.create_by_name(name)
+    new_by_name(name).save
   end
 
   def self.find_by_name name
